@@ -6,6 +6,7 @@ build
 memory
 .idea
 External Libraries
+java-challenges.iml
 
 
 # Created by https://www.gitignore.io/api/vim,osx,node,linux,windows
