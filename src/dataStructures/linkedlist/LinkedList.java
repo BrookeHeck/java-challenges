@@ -40,6 +40,18 @@ public class LinkedList {
         }
     }
 
+    public Boolean includes(String value) {
+        if(this.head == null) return false;
+        else {
+            Node current = this.head;
+            while(current != null) {
+                if(current.value.equals(value)) return true;
+                else current = current.next;
+            }
+            return false;
+        }
+    }
+
 
     @Override
     public String toString() {
