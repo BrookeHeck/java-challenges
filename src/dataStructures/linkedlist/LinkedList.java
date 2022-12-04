@@ -56,7 +56,7 @@ public class LinkedList {
     @Override
     public String toString() {
         Node current = this.head;
-        String str = "HEAD -> ";
+        String str = "";
         while(current != null) {
             str += (current.value + " -> ");
             current = current.next;
