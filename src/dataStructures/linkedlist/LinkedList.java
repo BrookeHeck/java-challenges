@@ -30,13 +30,15 @@ public class LinkedList {
     public void append(String value) {
         Node newNode = new Node(value);
         Node current = this.head;
-        while(current.next != null) {
-            current = current.next;
+        if(current == null) this.head = newNode;
+        else {
+            while(current.next != null) {
+                System.out.println(current);
+                current = current.next;
+            }
+            current.changeNext(newNode);
         }
-        current.changeNext(newNode);
     }
-
-    public Boolean includes(String value)
 
 
     @Override
