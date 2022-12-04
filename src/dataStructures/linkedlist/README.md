@@ -1,7 +1,7 @@
 # Linked List
 
-A singly linked list is a link of nodes that hold a reference to the next node in the list.
-Every node is instantiated with a value, and either inserted at the front or appended to the end.
+A singly linked list is a link of nodes that holds a reference to the next node in the list.
+Every node is instantiated with a value and inserted at the front or appended to the end.
 Every node is instantiated with a next reference. On instantiation, the next reference is null.
 When instantiating the linked list, a null head field is created. The head is a reference to the first node in the list
 When the list is empty, append and insert both make the head of the list the new node.
