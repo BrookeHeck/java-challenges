@@ -8,7 +8,7 @@ class Node {
         this.next = null;
     }
 
-    public void addNext(Node node) {
+    public void changeNext(Node node) {
         this.next = node;
     }
 }
@@ -19,8 +19,12 @@ public class LinkedList {
         this.head = null;
     }
 
-    public void insert() {
-
+    public void insert(String value) {
+        Node newNode = new Node(value);
+        if(this.head != null) {
+            newNode.changeNext(this.head);
+            this.head = newNode;
+        } else this.head = newNode;
     }
 
     public void append(String value) {
@@ -29,8 +33,10 @@ public class LinkedList {
         while(current.next != null) {
             current = current.next;
         }
-        current.addNext(newNode);
+        current.changeNext(newNode);
     }
+
+    public Boolean includes(String value)
 
 
     @Override
