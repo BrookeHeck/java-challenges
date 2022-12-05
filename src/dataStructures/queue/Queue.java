@@ -7,7 +7,7 @@ class Node {
         this.next = null;
     }
 
-    public changeNext(Node node) {
+    public void changeNext(Node node) {
         this.next = node;
     }
 }
@@ -52,6 +52,13 @@ public class Queue {
 
     @Override
     public String toString() {
-        
+        Node current = this.head;
+        String str = "FRONT ";
+        while(current != null) {
+            str = str + string.value + " -> ";
+            current = current.next;
+        }
+        str += "REAR";
+        return str;
     }
 }
