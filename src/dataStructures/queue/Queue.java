@@ -45,9 +45,12 @@ public class Queue {
     }
 
     public Node dequeue() {
-        Node temp = this.front;
-        this.front = this.front.next;
-        return temp;
+        if(!isEmpty()) {
+            Node temp = this.head;
+            this.head = this.head.next;
+            return temp;
+        }
+        return null;
     }
 
     @Override
