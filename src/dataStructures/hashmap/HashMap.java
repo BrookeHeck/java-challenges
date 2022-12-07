@@ -5,7 +5,7 @@ public class HashTable {
     ArrayList table;
     public HashTable(int size) {
         this.size = size;
-        this.table = new ArrayList<LinkedList>
+        this.table = new ArrayList<LinkedList>();
     }
 
     private int hash(String key) {
@@ -35,4 +35,17 @@ public class HashTable {
         }
     }
 
+    public String get(String key) {
+        int hash = this.hash(key);
+        LinkedList keyList = this.table.get(hash);
+
+        if(keyList == null) return null;
+        else {
+            for(String s : keyList) {
+                String[] arr = s.split(':');
+                if(arr[0].equals(key)) return arr[1];
+            }
+            return null;
+        }
+    }
 }
