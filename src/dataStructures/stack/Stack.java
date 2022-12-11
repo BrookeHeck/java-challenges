@@ -11,6 +11,14 @@ class Node {
     public void changeNext(Node node) {
         this.next = node;
     }
+
+    public String getValue() {
+        return this.value;
+    }
+
+    public Node getNext() {
+        return this.next;
+    }
 }
 
 public class Stack {
@@ -25,36 +33,36 @@ public class Stack {
         return false;
     }
 
-    public Node peek() {
-        if(!isEmpty()) return this.head.value;
+    public String peek() {
+        if(!isEmpty()) return this.top.getValue();
         return null;
     }
 
     public void push(String value) {
         Node newNode = new Node(value);
-        if(isEmpty()) this.head = newNode;
+        if(isEmpty()) this.top = newNode;
         else {
-            newNode.changeNext(this.head);
-            this.head = newNode;
+            newNode.changeNext(this.top);
+            this.top = newNode;
         }
     }
 
-    public Node pop() {
+    public String pop() {
         if(isEmpty()) return null;
         else {
-            Node temp = this.head;
-            this.head = this.head.next;
-            return temp.value;
+            Node temp = this.top;
+            this.top = this.top.getNext();
+            return temp.getValue();
         }
     }
 
     @Override
     public String toString() {
-        Node current = this.head;
+        Node current = this.top;
         String str = "TOP ";
         while(current != null) {
-            str = str + current.value + " -> ";
-            current = current.next;
+            str = str + current.getValue() + " -> ";
+            current = current.getNext();
         }
         str += "BOTTOM";
         return str;
