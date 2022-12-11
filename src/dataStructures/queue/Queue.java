@@ -22,7 +22,7 @@ public class Queue {
     }
 
     public Boolean isEmpty() {
-        if(this.front != null) return true;
+        if(this.head != null) return true;
         return false;
     }
 
@@ -35,12 +35,12 @@ public class Queue {
         Node newNode = new Node(value);
         if(isEmpty()) {
             this.head = newNode;
-        } else if(this.rear == null) {
-            this.rear = newNode;
+        } else if(this.tail == null) {
+            this.tail = newNode;
             this.head.changeNext(newNode);
         } else {
-            this.rear.changeNext(newNode);
-            this.rear = newNode;
+            this.tail.changeNext(newNode);
+            this.tail = newNode;
         }
     }
 
@@ -58,7 +58,7 @@ public class Queue {
         Node current = this.head;
         String str = "FRONT ";
         while(current != null) {
-            str = str + string.value + " -> ";
+            str = str + current.value + " -> ";
             current = current.next;
         }
         str += "REAR";
