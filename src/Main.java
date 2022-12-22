@@ -1,11 +1,11 @@
-import codeChallenges.stackQueue.Brackets;
+import codeChallenges.stackQueue.BrowserHistory;
 
 public class Main {
     public static void main(String[] args) {
-        Brackets brackets = new Brackets();
-        System.out.println(brackets.isValid("{}()[]"));
-        System.out.println(brackets.isValid("{}{code}(Fellows)[[]]"));
-        System.out.println(brackets.isValid("{(})"));
-        System.out.println(brackets.isValid("[(]"));
+        BrowserHistory browserHistory = new BrowserHistory();
+        System.out.println(browserHistory.isValid("{}()[]"));
+        System.out.println(browserHistory.isValid("{}{code}(Fellows)[[]]"));
+        System.out.println(browserHistory.isValid("{(})"));
+        System.out.println(browserHistory.isValid("[(]"));
     }
 }
