@@ -1,3 +1,5 @@
+package dataStructures.Stack;
+
 class Node {
     private String value;
 
