@@ -32,5 +32,23 @@ public class BrowserHistory {
         this.current = this.forward.pop();
         return temp;
     }
-    
+
+    public String getStackStrings(Stack stack) {
+        Stack tempStack = new Stack();
+        String str = "";
+        while(!stack.isEmpty()) {
+            String tempStr = stack.pop();
+            str = str + tempStr + " ";
+            tempStack.push(tempStr);
+        }
+        while(!tempStack.isEmpty()) {
+            stack.push(tempStack.pop());
+        }
+        return str;
+    }
+
+    @Override
+    public String toString() {
+        return "PREVIOUS: " + getStackStrings(this.previous) + "CURRENT: " + this.current + " FORWARD: " + getStackStrings(this.forward);
+    }
 }
