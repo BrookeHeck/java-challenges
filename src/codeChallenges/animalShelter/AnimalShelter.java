@@ -46,4 +46,16 @@ public class AnimalShelter {
             this.animalQueue.push(animal);
         }
     }
+
+    @Override
+    public String toString() {
+        String str = "";
+        while(!animalQueue.isEmpty()) {
+            String animal = this.animalQueue.pop();
+            str = str + animal + " ";
+            this.temp.push(animal);
+        }
+        reset();
+        return str;
+    }
 }
