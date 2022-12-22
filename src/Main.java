@@ -1,17 +1,11 @@
-import codeChallenges.*;
-import codeChallenges.animalShelter.AnimalShelter;
+import codeChallenges.stackQueue.Brackets;
 
 public class Main {
     public static void main(String[] args) {
-        AnimalShelter animalShelter = new AnimalShelter();
-
-        animalShelter.enqueue("dog");
-        animalShelter.enqueue("cat");
-        animalShelter.enqueue("dog");
-        System.out.println(animalShelter);
-
-        String desiredAnimal = animalShelter.dequeue("cat");
-        System.out.println(desiredAnimal);
-        System.out.println(animalShelter);
+        Brackets brackets = new Brackets();
+        System.out.println(brackets.isValid("{}()[]"));
+        System.out.println(brackets.isValid("{}{code}(Fellows)[[]]"));
+        System.out.println(brackets.isValid("{(})"));
+        System.out.println(brackets.isValid("[(]"));
     }
 }
