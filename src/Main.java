@@ -1,20 +1,16 @@
-import codeChallenges.stackQueue.BrowserHistory;
+import dataStructures.BinaryTree.*;
 
 public class Main {
     public static void main(String[] args) {
-        BrowserHistory browserHistory = new BrowserHistory();
-        browserHistory.changePage("www.one.com");
-        browserHistory.changePage("www.two.com");
-        browserHistory.changePage("www.three.com");
+        BinaryTree tree = new BinaryTree("root");
 
-        System.out.println(browserHistory.toString());
+        tree.add("left");
+        tree.add("right");
+        tree.add("left left");
+        tree.add("left right");
+        tree.add("right left");
+        tree.add("right right");
 
-        browserHistory.goBack();
-        
-        System.out.println(browserHistory.toString());
-
-        browserHistory.goForward();
-        
-        System.out.println(browserHistory.toString());
+        System.out.println(tree.toString());
     }
 }
