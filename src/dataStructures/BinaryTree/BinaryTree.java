@@ -1,5 +1,8 @@
 package dataStructures.BinaryTree;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 class Node {
     String value;
     Node left;
@@ -13,8 +16,53 @@ class Node {
 }
 
 public class BinaryTree {
-    
-    public BinaryTree() {
+    Node root;
 
+    public BinaryTree(String str) {
+        this.root = new Node(str);
+    }
+
+    public void add(String str) {
+        Node current = this.root;
+        Queue<Node> queue = new LinkedList<>();
+
+        while(current != null) {
+            if(current.left == null) {
+                current.left = new Node(str);
+                break;
+            }
+            else queue.add(current.left);
+            
+            if(current.right != null) {
+                current.right = new Node(str);
+                break;
+            } else queue.add(current.right);
+
+            current = queue.poll();
+        }
+    }
+
+    public boolean contains(String str) {
+        Node current = this.root;
+        Queue<Node> queue = new LinkedList<>();
+
+        while(current != null) {
+            if(current.left != null) {
+                if(current.left.value.equals(str)) return true;
+                else queue.add(current.left);
+            }
+            if(current.right != null) {
+                if(current.right.value.equals(str)) return true;
+                else queue.add(current.right);
+            }
+
+            current = queue.poll();
+        }
+        return false;
+    }
+
+    @Override
+    public String toString() {
+        return "";
     }
 }

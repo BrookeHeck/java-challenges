@@ -1,5 +1,3 @@
-package dataStructures.Queue;
-
 class Node {
     public String value;
     public Node next;
