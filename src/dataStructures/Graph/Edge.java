@@ -1,4 +1,4 @@
-package dataStructures.graph;
+package dataStructures.Graph;
 
 public class Edge {
     Vertex vertex;
