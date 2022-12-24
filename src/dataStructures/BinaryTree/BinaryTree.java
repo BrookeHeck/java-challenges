@@ -33,7 +33,7 @@ public class BinaryTree {
             }
             else queue.add(current.left);
             
-            if(current.right != null) {
+            if(current.right == null) {
                 current.right = new Node(str);
                 break;
             } else queue.add(current.right);
@@ -63,6 +63,15 @@ public class BinaryTree {
 
     @Override
     public String toString() {
-        return "";
+        String str = "ROOT: ";
+        Node current = this.root;
+        Queue<Node> queue = new LinkedList<>();
+        while(current != null) {
+            str = str + current.value + " ";
+            if(current.left != null) queue.add(current.left);
+            if(current.right != null) queue.add(current.right);
+            current = queue.poll();
+        }
+        return str;
     }
 }
